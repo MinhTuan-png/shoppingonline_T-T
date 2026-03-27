@@ -17,7 +17,7 @@ app.use('/api/customer', require('./api/customer.js'));
 app.use('/api/admin', require('./api/admin.js'));
 
 app.use('/admin', express.static(path.resolve(__dirname, '../client-admin/build')));
-app.get('admin/*', (req, res) => {
+app.get('/admin/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client-admin/build', 'index.html'))
 });
 app.use('/', express.static(path.resolve(__dirname, '../client-customer/build')));
