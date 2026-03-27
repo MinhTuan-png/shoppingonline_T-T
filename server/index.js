@@ -21,7 +21,7 @@ app.get('/admin/*splat', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client-admin/build', 'index.html'))
 });
 app.use('/', express.static(path.resolve(__dirname, '../client-customer/build')));
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client-customer/build', 'index.html'));
 });
 
